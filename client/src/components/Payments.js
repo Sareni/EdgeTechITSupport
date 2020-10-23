@@ -3,6 +3,7 @@ import StripeCheckout from 'react-stripe-checkout';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 
+
 class Payments extends Component {
     render() {
         return (
@@ -18,7 +19,7 @@ class Payments extends Component {
                     <i className="material-icons left blue-grey-text" style={{lineHeight: 'inherit', height: 'auto'}}>add</i>
                 </button>
             </StripeCheckout>
-        )
+        );
     }
 }
 
