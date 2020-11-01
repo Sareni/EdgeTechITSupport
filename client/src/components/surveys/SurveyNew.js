@@ -4,7 +4,7 @@ import SurveyForm from './SurveyForm';
 import SurveyFormReview from './SurveyFormReview';
 
 class SurveyNew extends Component {
-    state = { showReview: false };
+    state = { showFormReview: false };
 
     renderContent() {
         if (this.state.showFormReview) {
