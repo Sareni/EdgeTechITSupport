@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import M from 'materialize-css';  
-import Payments from './Payments';
+import M from 'materialize-css';
+import * as actions from '../actions';
 
 class Header extends Component {
     componentDidUpdate() {
@@ -20,7 +20,12 @@ class Header extends Component {
 
             default:
                 return [
-                    <li key='1'><Payments/></li>,
+                    <li key='1'>
+                        <button onClick={() => this.props.showPaymentDialog()} className='btn white blue-grey-text buttonHoverWithShadow'>
+                            Add Credits
+                            <i className="material-icons left blue-grey-text" style={{lineHeight: 'inherit', height: 'auto'}}>add</i>
+                        </button>
+                    </li>,
                     <li key='2'><div style={{width: '35px', height: '1px'}}></div></li>,
                     /*<li key='2' style={{ margin: '0 10px' }}>
                         Credits: { this.props.auth.credits }
@@ -64,4 +69,4 @@ function mapStateToProps({ auth }) {
     return { auth };
 }
 
-export default connect(mapStateToProps)(Header);
+export default connect(mapStateToProps, actions)(Header);
