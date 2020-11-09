@@ -26,6 +26,7 @@
     "path-parser": "^6.1.0",
     "pug": "2.0.0-beta11",
     "sendgrid": "^5.2.3",
-    "stripe": "^8.89.0"
+    "stripe": "^8.89.0",
+    "track-anything": "file:../track-anything"
   }
 }

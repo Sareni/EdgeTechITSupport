@@ -1,4 +1,5 @@
 const passport = require('passport');
+const TrackingService = require('track-anything');
 
 module.exports = (app) => {
     app.get('/auth/google', passport.authenticate('google', {
@@ -14,6 +15,7 @@ module.exports = (app) => {
     );
 
     app.get('/api/logout', (req, res) => {
+        TrackingService.trackUseraction({ type: 'logout'});
         req.logout();
         res.redirect('/');
     });

@@ -5,6 +5,7 @@ const passport = require('passport');
 const bodyParser = require('body-parser');
 const keys = require('./config/keys');
 const app = express();
+require('track-anything').initialize('abc');
 
 require('./models/User');
 require('./models/Survey');
